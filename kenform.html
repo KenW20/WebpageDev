@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>HTML Forms for Ken</h2>
+
+    <form action="/action_page.php" method="get">
+
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Please enter your name">
+        </div>
+
+        <div>
+            <label for="editor">Code editor:</label>
+            <select id="editor" name="editor">
+                <option value="notepad">Notepad</option>
+                <option value="vscode">VS Code</option>
+                <option value="github">GitHub online Editor</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="platform">Target Platform:</label>
+
+            <input type="checkbox" id="platformWin" name="platformWin" value="Windows">
+            <label for="platformWin"> Windows</label>
+
+            <input type="checkbox" id="platformMac" name="platformMac" value="Mac">
+            <label for="platformMac"> Mac</label>
+
+            <input type="checkbox" id="platformIPhone" name="platformIPhone" value="IPhone">
+            <label for="platformIPhone"> iPhone</label>
+
+            <input type="checkbox" id="platformAndroid" name="platformAndroid" value="Android">
+            <label for="platformAndroid"> Android</label>
+        </div>
+
+        <p></p>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Cancel">
+    </form>
+
+    <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+    <p><a href="https://www.w3schools.com/">W3Schools</a></p>
+
+</body>
+
+</html>
