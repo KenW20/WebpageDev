@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<!--
+https://www.w3schools.com/js/js_api_intro.asp
+YouTube API - Allows you to display videos on a web site.
+Twitter API - Allows you to display Tweets on a web site.
+Facebook API - Allows you to display Facebook info on a web site.
+-->
+
+<body>
+
+  <h2>JavaScript fetch API</h2>
+  <a href="https://www.w3schools.com/js/js_api_intro.asp">w3schools</a>
+
+  <p>Click the button(s) to get your info.</p>
+
+  <button onclick="getLocation()">Current Coordinates</button>
+  <button onclick="getQuote()">Favourite Quote for the day</button>
+
+  <p id="demo" style="font-size: 32px; color: rgba(28, 28, 209, 0.308);"></p>
+
+  <script>
+    const demoPara = document.getElementById("demo");
+  </script>
+
+  <script>
+    function getLocation() {
+      try {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } catch {
+        demoPara.innerHTML = err;
+      }
+    }
+    function showPosition(position) {
+      demoPara.innerHTML =
+        "Latitude: " + position.coords.latitude +
+        "<br/>Longitude: " + position.coords.longitude;
+    }
+  </script>
+
+  <script>
+    async function getQuote() {
+      demoPara.innerHTML = await fetchQuote();
+    }
+    async function fetchQuote() {
+      let response = await fetch("https://favqs.com/api/qotd");
+      let json = await response.json();
+      let quote = json.quote.body;
+      return quote;
+    }
+
+  </script>
+
+</body>
+
+</html>
